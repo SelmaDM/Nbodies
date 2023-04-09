@@ -1,5 +1,6 @@
 # Nbodies
-N-Bodies problem: Evolution of a set of bodies that interact with each other.
+## N-Bodies problem:
+### Evolution of a set of bodies that interact with each other.
 
 Example in astrophysics: The motion of stars taking into account the forces of gravitation.
 
@@ -13,8 +14,11 @@ to sum up all the forces suffered by each star
 calculate, from the forces, the new positions, velocity and acceleration of each star on a given set of time steps (iterations).
 
 
-The sequential program is as follows:
+### The sequential program is as follows:
 
+
+
+```
 for t in range(0, NB_STEPS)
 	force = []
 for i in range(0,N)
@@ -24,5 +28,7 @@ force[i] = force[i] !+! interaction(data[i], data[j])
 
 for i in range(0, N)
 data[i] = update(data[i], force[i])
+```
+
 
 where data[i] is a data structure that includes the position, velocity and acceleration of star i, N is the number of starts, interaction(data[i],[j]) is a function that returns the force applied by star j to star i (this function reads data[i] and data[j] but does not modify them), and update(data[i],force[i]) is a function that computes the new position, velocity and acceleration of star i based on the force it experiences. It is assumed that only the process of rank 0 knows data and that the number of processes divides the number of stars. Be careful, to really implement this algorithm, more lines of code are needed to add the force pairs when updating force[i].
