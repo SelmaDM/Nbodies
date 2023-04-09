@@ -33,6 +33,7 @@ data[i] = update(data[i], force[i])
 where data[i] is a data structure that includes the position, velocity and acceleration of star i, N is the number of starts, interaction(data[i],[j]) is a function that returns the force applied by star j to star i (this function reads data[i] and data[j] but does not modify them), and update(data[i],force[i]) is a function that computes the new position, velocity and acceleration of star i based on the force it experiences. It is assumed that only the process of rank 0 knows data and that the number of processes divides the number of stars. Be careful, to really implement this algorithm, more lines of code are needed to add the force pairs when updating force[i].
 
 <img src="https://github.com/SelmaDM/Nbodies/blob/master/Temps%20exe%20vs.%20Param.png"/>
+<img src = "https://github.com/SelmaDM/Nbodies/blob/master/Temps%20exec%20vs.%20Process.png"/>
 
 
 
