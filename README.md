@@ -1,4 +1,3 @@
-# Nbodies
 ## N-Bodies problem:
 ### Evolution of a set of bodies that interact with each other.
 
